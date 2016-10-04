@@ -1,0 +1,212 @@
+﻿@model FoodPantry.Models.FoodPantryLog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="large-8 columns">
+        <h2>Food Pantry</h2>
+    </div>
+    <div class="large-4 columns text-right">
+        <h4 class="subheader">Details</h4>
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="large-6 columns">
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            <hr/></dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentIDNO)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StudentIDNO)
+            <hr/></dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StudentName)
+            <hr/></dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DateInserted)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DateInserted)
+            <hr/></dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NoInHousehold)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NoInHousehold)
+            <hr/></dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DeltaStudCount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DeltaStudCount)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NoChildren0Thru5)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoChildren0Thru5)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NoChildren6Thru8)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoChildren6Thru8)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ExplainOther)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ExplainOther)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Signature)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Signature)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Inc_Loans)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Inc_Loans)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Inc_Spouse)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Inc_Spouse)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Inc_OnCampus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Inc_OnCampus)
+            <hr/></dd>
+        </dl>
+    </div>
+    <div class="large-6 columns">
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Inc_OffCampus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Inc_OffCampus)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Inc_Scholarships)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Inc_Scholarships)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Inc_ParentalSupport)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Inc_ParentalSupport)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Inc_Other)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Inc_Other)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Inc_Grants)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Inc_Grants)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Qty_LargeBag)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Qty_LargeBag)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Qty_SmallBag)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Qty_SmallBag)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EnrollmentStatu.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EnrollmentStatu.Title)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.InfoSource.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.InfoSource.Title)
+            <hr/></dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentType1.StudentTypeDesc)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StudentType1.StudentTypeDesc)
+            <hr/></dd>
+        </dl>
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <hr />
+    </div>
+    <div class="large-12 columns">
+        @if (ViewBag.Referrer != null)
+        {
+            <a href="@ViewBag.Referrer">Back to List</a>
+        }
+        else
+        {
+            @Html.ActionLink("Back to List", "Index")
+        }
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@model PagedList.IPagedList<FoodPantry.Models.EmailSetting>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Email Settings";
+}
+
+<h2>Food Pantry</h2>
+
+<div class="row">
+    <div class="large-10 columns">
+        <h3>@ViewBag.Title</h3>
+    </div>
+    <div class="large-2 columns text-right">
+       <!-- @Html.ActionLink("Create New", "Create", null, new { @class = "button" }) -->
+    </div>
+</div>
+
+<table class="large-12">
+    <tr>
+        <th>Subject Contents</th>
+        <th>Date Modified</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectContents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateModified)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EmailID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

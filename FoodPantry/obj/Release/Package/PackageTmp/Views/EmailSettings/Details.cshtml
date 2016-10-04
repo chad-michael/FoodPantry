@@ -1,0 +1,74 @@
+﻿@model FoodPantry.Models.EmailSetting
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EmailSetting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailContents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailContents)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectContents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectContents)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateModified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateModified)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deleted)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmailID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

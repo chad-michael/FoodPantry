@@ -1,0 +1,184 @@
+﻿@model PagedList.IPagedList<FoodPantryLog>
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using PagedList.Mvc;
+@using FoodPantry.Models;
+
+@{
+    ViewBag.Title = "Food Pantry Intake";
+}
+<h2>@ViewBag.Title</h2>
+<hr/>
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <div class="row">
+        <div class="large-8 large-centered columns">
+            <div class="row">
+                <div class="large-12 columns">
+                    <h3>Student Lookup</h3>
+                    <label>Enter a student ID number</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-8 columns">
+                    @Html.TextBox("studentId", ViewBag.CurrentFilter as string, new { @placeholder = "Student ID..." })
+                </div>
+                <div class="large-4 columns">
+                    <input type="submit" class="button expanded" value="Search" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-3 columns">
+                    <strong>Current Terms</strong>
+                </div>
+                <div class="large-9 columns">
+                    <span>|</span> 
+                    @foreach (Term term in ViewBag.Terms)
+                    {
+                        @term.Code <span>|</span> 
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<hr/>
+
+@if (Model != null)
+{
+    <div class="row">
+        <div class="large-3 columns">
+            <div class="row">
+                <div class="large-12 columns">
+                    <img class="thumbnail large-12" src="@Url.RouteUrl("Default", new { Controller = "FoodPantryLogs", Action = "UserImage", id = ViewBag.studentId })" alt="IMAGES" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    @if (ViewBag.transcript == null)
+                    {
+                        <div class="warning label large-12 text-center">Not enrolled this term.</div>
+                    }
+                    else {
+                        <div class="success label large-12 text-center">Enrolled in @ViewBag.transcript.Code</div>
+                    }
+                    @if (@ViewBag.studentInfo == null)
+                    {
+                        <h4 class="text-center">Student Not Found</h4>
+                    }
+                    else
+                    {
+                        <h4 class="text-center">@ViewBag.studentInfo.FirstName @ViewBag.studentInfo.LastName</h4>
+                        <div class="text-center">
+                            @if (ViewBag.studentInfo.PreferredAddress != null && ((IList<string>) ViewBag.studentInfo.PreferredAddress).Count > 0)
+                            {
+                                @ViewBag.studentInfo.PreferredAddress[0]
+                                if (((IList<string>) ViewBag.studentInfo.PreferredAddress).Count > 1)
+                                {
+                                    <br/>
+                                    @ViewBag.studentInfo.PreferredAddress[1]
+                                }
+                            }
+                            else
+                            {
+                                <span>No Preferred Address Available</span>
+                            }
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns"><hr /></div>
+                        </div>
+                        <div class="row">
+                            <div class="large-8 columns">
+                                <h5 class="subheader">Notes</h5>
+                            </div>
+                            <div class="large-4 columns text-right">
+                                <a data-open="notesModal">Edit</a>
+                            </div>
+                            <div class="large-12 columns">
+                                <p>
+                                    @ViewBag.studentNote.Notes
+                                </p>
+                            </div>
+                            <div class="reveal" id="notesModal" data-reveal>
+                                <h3>Edit Note</h3>
+
+                                @using (Html.BeginForm("Edit", "Notes"))
+                                {
+                                    @Html.Hidden("StudentIDNO", (string)ViewBag.studentId)
+                                    @Html.TextArea("Notes", ((Note)ViewBag.studentNote).Notes)
+                                    <input type="submit" value="Save" class="button" />
+                                }
+                                <button class="close-button" data-close aria-label="Close modal" type="button">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="large-9 columns">
+            <div class="row">
+                <div class="large-6 columns">
+                    <h4 class="subheader">Counts for current month</h4>
+                </div>
+                <div class="large-3 columns">
+                    <div class="bag-count">
+                        <strong>Small Bags</strong>
+                        <em>@ViewBag.countsForMonth.Smalls</em>
+                    </div>
+                </div>
+                <div class="large-3 columns">
+                    <div class="bag-count">
+                        <strong>Large Bags</strong>
+                        <em>@ViewBag.countsForMonth.Larges</em>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="large-8 columns">
+                    <h4 class="subheader">Student Activity</h4>
+                </div>
+                <div class="large-4 columns text-right">
+                    @Html.ActionLink("Create Entry", "CreateWithStudent", new { Controller = "FoodPantryLogs", StudentIDNO = ViewBag.studentId }, new { @class = "button small" })
+                </div>
+            </div>
+            <table class="large-12">
+                <tr>
+                    <th>
+                        Date Inserted
+                    </th>
+                    <th>
+                        # of Small Bags
+                    </th>
+                    <th>
+                        # of Large Bags
+                    </th>
+                    <th></th>
+                </tr>
+                @foreach (FoodPantryLog item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateInserted)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(modelItem => item.Qty_SmallBag)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(modelItem => item.Qty_LargeBag)
+                        </td>
+                        <td class="text-right">
+                            @Html.ActionLink("Edit", "Edit", new { Controller = "FoodPantryLogs", id = item.FoodPantryLogID })
+                        </td>
+                    </tr>
+                }
+            </table>
+            <br />
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, studentId = ViewBag.studentId }))
+        </div>
+    </div>
+}
+<br />

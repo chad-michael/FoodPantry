@@ -1,0 +1,75 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=EDGE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta College - Food Pantry - @ViewBag.Title</title>
+    @Styles.Render("~/Content/foundation/app.css")
+    @Styles.Render("~/Content/foundation/foundation.css")
+    @Styles.Render("~/Content/foundation/foundation-datepicker.css")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body id="main">
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="navbar-header">
+                <a href="http://www.delta.edu/home.aspx" title="Delta College Home">
+                    <img src="http://www.delta.edu/images/system/redesign/DeltaLogo.png" title="Delta College Home" alt="Delta College logo"/>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li>@Html.ActionLink("Intake", "Index", "Home")</li>
+                        <li><a target="_blank" href="@System.Web.Configuration.WebConfigurationManager.AppSettings["ReportsUrl"]">Reports</a></li>
+                        <li>@Html.ActionLink("Logs", "Index", "FoodPantryLogs")</li>
+                        <li>@Html.ActionLink("Email Settings", "Index", "EmailSettings")</li>
+                    </ul>
+                </div>
+                <div class="top-bar-right">
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+            <div class="large-12 columns">
+                <div class="content">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Delta College - Food Pantry</p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/Scripts/foundation/vendor/jquery.min.js")
+    @Scripts.Render("~/Scripts/foundation/vendor/what-input.min.js")
+    @Scripts.Render("~/Scripts/foundation/foundation.min.js")
+    @Scripts.Render("~/Scripts/foundation/app.js")
+    @Scripts.Render("~/Scripts/foundation/foundation-datepicker.min.js")
+    @RenderSection("scripts", required: false)
+
+
+    <script>
+        $(document).ready(function () {
+            console.log('hi');
+            $('.fdatepicker').fdatepicker();
+        });
+    </script>
+
+</body>
+</html>

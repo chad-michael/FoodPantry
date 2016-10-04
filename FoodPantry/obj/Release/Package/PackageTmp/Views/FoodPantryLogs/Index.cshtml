@@ -1,0 +1,73 @@
+﻿@model PagedList.IPagedList<FoodPantry.Models.FoodPantryLog>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Food Pantry";
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Index", "FoodPantryLogs", FormMethod.Get))
+{
+    <div class="row">
+        <div class="large-8 columns">
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @placeholder = "Search..." })
+        </div>
+        <div class="large-2 columns">
+            <input type="submit" class="button" value="Search"/>
+        </div>
+        <div class="large-2 columns text-right">
+            @Html.ActionLink("Create New", "Create", null, new { @class = "button" })
+        </div>
+    </div>
+}
+
+<table class="large-12 columns">
+    <tr>
+        <th>
+            @Html.ActionLink("Student Name", "Index", new { sortOrder = "student_name_desc", currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Date Inserted", "Index", new { sortOrder = "date_insert_desc", currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            Qty LargeBag
+        </th>
+        <th>
+            Qty SmallBag
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @if (String.IsNullOrEmpty(item.StudentName))
+            {
+                <span>No Name</span>
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.StudentName)
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateInserted)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.Qty_LargeBag)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.Qty_SmallBag)
+        </td>
+        <td class="text-right">
+            @Html.ActionLink("Edit", "Edit", new { id = item.FoodPantryLogID })
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

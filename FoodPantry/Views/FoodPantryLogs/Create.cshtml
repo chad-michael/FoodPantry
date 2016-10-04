@@ -1,0 +1,299 @@
+﻿@model FoodPantry.Models.FoodPantryLog
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Food Pantry</h2>
+
+<div class="row">
+    <div class="large-8 columns">
+        <h3>Log</h3>
+    </div>
+    <div class="large-4 columns text-right">
+        <h4 class="subheader">Create</h4>
+    </div>
+</div>
+<hr />
+
+@using (Html.BeginForm("Create", "FoodPantryLogs")) 
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "form-error is-visible" })
+
+        <div class="row">
+            <div class="large-2 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentIDNO, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StudentIDNO, new { htmlAttributes = new { @class = "form-control",  } })
+                        @Html.ValidationMessageFor(model => model.StudentIDNO, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+            <div class="large-4 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StudentName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+            <div class="large-2 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.WaterBottle, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.WaterBottle, new { htmlAttributes = new { @class = "fdatepicker form-control text-right" } })
+                        @Html.ValidationMessageFor(model => model.WaterBottle, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+            <div class="large-2 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Qty_SmallBag, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Qty_SmallBag, new { htmlAttributes = new { @class = "form-control text-right" } })
+                        @Html.ValidationMessageFor(model => model.Qty_SmallBag, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+            <div class="large-2 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Qty_LargeBag, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Qty_LargeBag, new { htmlAttributes = new { @class = "form-control text-right" } })
+                        @Html.ValidationMessageFor(model => model.Qty_LargeBag, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NoInHousehold, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NoInHousehold, new { htmlAttributes = new { @class = "form-control text-right" } })
+                        @Html.ValidationMessageFor(model => model.NoInHousehold, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DeltaStudCount, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DeltaStudCount, new { htmlAttributes = new { @class = "form-control text-right" } })
+                        @Html.ValidationMessageFor(model => model.DeltaStudCount, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NoChildren0Thru5, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NoChildren0Thru5, new { htmlAttributes = new { @class = "form-control text-right" } })
+                        @Html.ValidationMessageFor(model => model.NoChildren0Thru5, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NoChildren6Thru8, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NoChildren6Thru8, new { htmlAttributes = new { @class = "form-control text-right" } })
+                        @Html.ValidationMessageFor(model => model.NoChildren6Thru8, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-4 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentType, "StudentType", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("StudentType", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.StudentType, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+            <div class="large-4 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.InfoSourcesID, "InfoSourcesID", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("InfoSourcesID", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.InfoSourcesID, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+            <div class="large-4 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ExplainOther, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ExplainOther, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ExplainOther, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Inc_Loans, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Inc_Loans)
+                            @Html.ValidationMessageFor(model => model.Inc_Loans, "", new { @class = "form-error is-visible" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Inc_Spouse, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Inc_Spouse)
+                            @Html.ValidationMessageFor(model => model.Inc_Spouse, "", new { @class = "form-error is-visible" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Inc_Other, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Inc_Other)
+                            @Html.ValidationMessageFor(model => model.Inc_Other, "", new { @class = "form-error is-visible" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Inc_Grants, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Inc_Grants)
+                            @Html.ValidationMessageFor(model => model.Inc_Grants, "", new { @class = "form-error is-visible" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Inc_OffCampus, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Inc_OffCampus)
+                            @Html.ValidationMessageFor(model => model.Inc_OffCampus, "", new { @class = "form-error is-visible" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Inc_OnCampus, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Inc_OnCampus)
+                            @Html.ValidationMessageFor(model => model.Inc_OnCampus, "", new { @class = "form-error is-visible" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Inc_Scholarships, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Inc_Scholarships)
+                            @Html.ValidationMessageFor(model => model.Inc_Scholarships, "", new { @class = "form-error is-visible" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 columns">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Inc_ParentalSupport, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Inc_ParentalSupport)
+                            @Html.ValidationMessageFor(model => model.Inc_ParentalSupport, "", new { @class = "form-error is-visible" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <p>
+                    Please read the following statement before entering your name below.  Entering your name below serves as a digital signature that you have read and accept the following:
+                </p>
+                <p>
+                    I understand that food distributed at the Delta Student Food Pantry has been donated from various on- and off-campus partners, and that none of the parties or groups involved in the program make any warranties as to the quality of the food or its value for any particular purposes.
+                </p>
+                <p>
+                    I voluntarily accept the food “as is.”  By my signature, I release the Delta Student Food Pantry, Delta College and the original donor from any liability for harm (including injury or death) or losses in connection with the food or supplies I have received.  I assume any risks and covenant not to sue the released parties with respect to such harm or losses.
+                </p>
+                <p>
+                    I understand that the Delta Student Food Pantry operates on limited funds and in support of others, and not as a service of Delta College.  I will not abuse the services of the Delta Student Food Pantry.  I will only request and take the items that I reasonably expect myself and/or my family to use.
+                </p>
+                <p>
+                    I understand that Delta College will not sell, trade or otherwise transfer to outside parties my personally identifiable information.
+                </p>
+                <p>
+                    For future reference, the Food Pantry Rules are as follows:
+                </p>
+                <ul>
+                    <li>Students are required to present a Delta student ID or a driver’s license to receive food pantry services.</li>
+                    <li>Students must be enrolled in the current semester to receive food pantry services.</li>
+                    <li>Only one person at a time, other than SFP staff, will be permitted in the food pantry.</li>
+                    <li>The maximum amount of food a student can receive in a one month period is a total of eight bags (4 lunch bags and 4 pre-packaged bags)</li>
+                    <li>Lunch Bag consists of 2 snacks and 1 meal</li>
+                    <li>Pre-Packaged bag consists of five pre-selected items.</li>
+                    <li>Students are eligible to receive one lunch bag and one pre-packaged bag of food from the SFP per day.</li>
+                </ul>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Signature, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Signature, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Signature, "", new { @class = "form-error is-visible" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns text-right">
+                <hr />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-6 columns">
+                @if (ViewBag.Referrer != null)
+                {
+                    <a href="@ViewBag.Referrer">Back to List</a>
+                }
+                else
+                {
+                    @Html.ActionLink("Back to List", "Index")
+                }
+            </div>
+            <div class="large-6 columns text-right">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="button" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

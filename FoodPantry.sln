@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPantry", "FoodPantry\FoodPantry.csproj", "{7AAF9730-011F-465B-B0C7-7BE1543590BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPantry.Tests", "FoodPantry.Tests\FoodPantry.Tests.csproj", "{C76CB636-F4F0-49CB-9C39-C8F0123A6A52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AAF9730-011F-465B-B0C7-7BE1543590BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AAF9730-011F-465B-B0C7-7BE1543590BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AAF9730-011F-465B-B0C7-7BE1543590BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AAF9730-011F-465B-B0C7-7BE1543590BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C76CB636-F4F0-49CB-9C39-C8F0123A6A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C76CB636-F4F0-49CB-9C39-C8F0123A6A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C76CB636-F4F0-49CB-9C39-C8F0123A6A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C76CB636-F4F0-49CB-9C39-C8F0123A6A52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
