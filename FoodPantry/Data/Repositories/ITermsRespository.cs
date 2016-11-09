@@ -1,13 +1,9 @@
-﻿using FoodPantry.Models;
-using System;
+﻿using FoodPantry.Data.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FoodPantry.Data.Repositories
 {
-    interface ITermsRespository
+    internal interface ITermsRespository
     {
         IList<Term> FindAllRegistrationTerms();
     }

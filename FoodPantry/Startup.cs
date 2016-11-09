@@ -2,6 +2,7 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(FoodPantry.Startup))]
+
 namespace FoodPantry
 {
     public partial class Startup

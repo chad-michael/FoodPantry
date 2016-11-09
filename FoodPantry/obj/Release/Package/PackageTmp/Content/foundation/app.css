@@ -1,6 +1,6 @@
 #main {
     background-color:  #E3E3E3;
-    background-image: url(http://www.delta.edu/images/system/redesign/headerbg.png); 
+    background-image: url(http://www.delta.edu/images/system/redesign/headerbg.png);
     background-repeat: repeat-x;
 }
 #main .top-bar, #main .top-bar ul {
@@ -13,11 +13,11 @@
     padding-top: 15px;
 }
 #main .body-content {
-    background-color: #E3E3E3; 
+    background-color: #E3E3E3;
 }
 #main .content {
     padding: 15px;
-    background-color: #fff; 
+    background-color: #fff;
 }
 
 [type="checkbox"] ~ label {

@@ -1,11 +1,7 @@
-﻿using FoodPantry.Data.Repositories;
-using System;
+﻿using FoodPantry.Data.Models;
+using FoodPantry.Data.Repositories;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using FoodPantry.Models;
 using System.Web.Script.Serialization;
-using FoodPantry.Data.Models;
 
 namespace FoodPantry.Core.Repositories
 {
@@ -15,13 +11,13 @@ namespace FoodPantry.Core.Repositories
     public class ColleagueWsStudentsRepository : ColleagueWsRepository, IStudentsRespository
     {
         public ColleagueWsStudentsRepository(string serviceUrl, string username, string password)
-            :base(serviceUrl, username, password)
+            : base(serviceUrl, username, password)
         {
             ;
         }
 
         public ColleagueWsStudentsRepository(string serviceUrl, string sessionToken)
-            :base(serviceUrl, sessionToken)
+            : base(serviceUrl, sessionToken)
         {
             ;
         }

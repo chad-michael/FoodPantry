@@ -104,14 +104,11 @@ var Foundation = {
       actvPlugins.forEach(function(p){
         _this._activePlugins[p]._init();
       });
-
     }else if(typeof plugins === 'string'){
       var namespace = plugins.split('-')[1];
 
       if(namespace){
-
         this._activePlugins[plugins]._init();
-
       }else{
         namespace = new RegExp(plugins, 'i');
 
@@ -122,7 +119,6 @@ var Foundation = {
         });
       }
     }
-
   },
 
   /**
@@ -143,7 +139,6 @@ var Foundation = {
    * @param {String|Array} plugins - A list of plugins to initialize. Leave this out to initialize everything.
    */
   reflow: function(elem, plugins) {
-
     // If plugins is undefined, just grab everything
     if (typeof plugins === 'undefined') {
       plugins = Object.keys(this._plugins);
@@ -215,7 +210,6 @@ var Foundation = {
     }
   }
 };
-
 
 Foundation.util = {
   /**
@@ -371,7 +365,6 @@ function parseValue(str){
 function hyphenate(str) {
   return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 }
-
 }(jQuery);
 
 !function(Foundation, window){
@@ -590,7 +583,6 @@ function hyphenate(str) {
   };
   Foundation.Keyboard.parseKey = parseKey;
 
-
   // plain commands per component go here, ltr and rtl are merged based on orientation
   var commands = {};
 
@@ -616,7 +608,6 @@ function hyphenate(str) {
         else cmds = $.extend({}, commandList.rtl, commandList.ltr);
     }
     command = cmds[keyCode];
-
 
     fn = functions[command];
     if (fn && typeof fn === 'function') { // execute function with context of the component if exists
@@ -658,7 +649,6 @@ function hyphenate(str) {
 }(jQuery, window.Foundation);
 
 !function($, Foundation) {
-
 // Default set of media queries
 var defaultQueries = {
   'default' : 'only screen',
@@ -865,7 +855,6 @@ function parseStyleToObject(str) {
 
   return styleObject;
 }
-
 }(jQuery, Foundation)
 
 /**
@@ -873,7 +862,6 @@ function parseStyleToObject(str) {
  * @module foundation.motion
  */
 !function($, Foundation) {
-
 var initClasses   = ['mui-enter', 'mui-leave'];
 var activeClasses = ['mui-enter-active', 'mui-leave-active'];
 
@@ -955,7 +943,6 @@ var Move = function(duration, elem, fn){
 
 Foundation.Move = Move;
 Foundation.Motion = Motion;
-
 }(jQuery, Foundation);
 
 !function($, Foundation){
@@ -1107,7 +1094,6 @@ Foundation.Motion = Motion;
 //**Done by Yohai Ararat ***************************
 //**************************************************
 (function($) {
-
   $.spotSwipe = {
     version: '1.0.0',
     enabled: 'ontouchstart' in document.documentElement,
@@ -1208,7 +1194,6 @@ Foundation.Motion = Motion;
   };
 }(jQuery);
 
-
 //**********************************
 //**From the jQuery Mobile Library**
 //**need to recreate functionality**
@@ -1219,7 +1204,6 @@ Foundation.Motion = Motion;
 ************************************
 
 (function( $, window, undefined ) {
-
 	var $document = $( document ),
 		// supportTouch = $.mobile.support.touch,
 		touchStartEvent = 'touchstart'//supportTouch ? "touchstart" : "mousedown",
@@ -1229,7 +1213,6 @@ Foundation.Motion = Motion;
 	// setup new event shortcuts
 	$.each( ( "touchstart touchmove touchend " +
 		"swipe swipeleft swiperight" ).split( " " ), function( i, name ) {
-
 		$.fn[ name ] = function( fn ) {
 			return fn ? this.bind( name, fn ) : this.trigger( name );
 		};
@@ -1255,7 +1238,6 @@ Foundation.Motion = Motion;
 
 	// Also handles swipeleft, swiperight
 	$.event.special.swipe = {
-
 		// More than this horizontal displacement, and we will suppress scrolling.
 		scrollSupressionThreshold: 30,
 
@@ -1276,13 +1258,11 @@ Foundation.Motion = Motion;
 
 			if ( event.pageY === 0 && Math.floor( y ) > Math.floor( event.pageY ) ||
 				event.pageX === 0 && Math.floor( x ) > Math.floor( event.pageX ) ) {
-
 				// iOS4 clientX/clientY have the value that should have been
 				// in pageX/pageY. While pageX/page/ have the value 0
 				x = x - winPageX;
 				y = y - winPageY;
 			} else if ( y < ( event.pageY - winPageY) || x < ( event.pageX - winPageX ) ) {
-
 				// Some Android browsers have totally bogus values for clientX/Y
 				// when scrolling/zooming a page. Detectable since clientX/clientY
 				// should never be smaller than pageX/pageY minus page scroll
@@ -1328,7 +1308,6 @@ Foundation.Motion = Motion;
 				return true;
 			}
 			return false;
-
 		},
 
 		// This serves as a flag to ensure that at most one swipe event event is
@@ -1351,7 +1330,6 @@ Foundation.Motion = Motion;
 			events.swipe = context;
 
 			context.start = function( event ) {
-
 				// Bail if we're already working on a swipe event
 				if ( $.event.special.swipe.eventInProgress ) {
 					return;
@@ -1372,7 +1350,6 @@ Foundation.Motion = Motion;
 					if ( !emitted ) {
 						emitted = $.event.special.swipe.handleSwipe( start, stop, thisObject, origTarget );
 						if ( emitted ) {
-
 							// Reset the context to make way for the next swipe event
 							$.event.special.swipe.eventInProgress = false;
 						}
@@ -1428,7 +1405,6 @@ Foundation.Motion = Motion;
 		swipeleft: "swipe.left",
 		swiperight: "swipe.right"
 	}, function( event, sourceEvent ) {
-
 		$.event.special[ event ] = {
 			setup: function() {
 				$( this ).bind( sourceEvent, $.noop );
@@ -1489,7 +1465,6 @@ Foundation.Motion = Motion;
     return false;
   }());
 
-
   var checkListeners = function(){
     eventsListener();
     resizeListener();
@@ -1545,7 +1520,6 @@ Foundation.Motion = Motion;
         if (timer) { clearTimeout(timer); }
 
         timer = setTimeout(function(){
-
           if(!MutationObserver){//fallback for IE 9
             $nodes.each(function(){
               $(this).triggerHandler('resizeme.zf.trigger');
@@ -1566,7 +1540,6 @@ Foundation.Motion = Motion;
         if(timer){ clearTimeout(timer); }
 
         timer = setTimeout(function(){
-
           if(!MutationObserver){//fallback for IE 9
             $nodes.each(function(){
               $(this).triggerHandler('scrollme.zf.trigger');
@@ -1621,7 +1594,6 @@ Foundation.Motion = Motion;
       var $target = $(mutationRecordsList[0].target);
       //trigger the event handler for the element depending on type
       switch ($target.attr("data-events")) {
-
         case "resize" :
         $target.triggerHandler('resizeme.zf.trigger', [$target]);
         break;
@@ -1661,7 +1633,6 @@ Foundation.Motion = Motion;
   Foundation.IHearYou = checkListeners;
   // Foundation.ISeeYou = scrollListener;
   // Foundation.IFeelYou = closemeListener;
-
 }(window.Foundation, window.jQuery);
 
 !function(Foundation, $) {
@@ -1738,7 +1709,6 @@ Foundation.Motion = Motion;
     }
   };
 
-
   /**
    * Initializes the Abide plugin and calls functions to get Abide functioning on load.
    * @private
@@ -1778,7 +1748,6 @@ Foundation.Motion = Motion;
           // }
           // self.validateForm(self.$element);
         });
-
   },
   /**
    * Calls necessary functions to update Abide upon DOM change
@@ -2023,7 +1992,6 @@ Foundation.Motion = Motion;
     }
   };
   Abide.prototype.matchValidation = function(val, validation) {
-
   };
   /**
    * Resets form inputs and styles
@@ -2054,7 +2022,6 @@ Foundation.Motion = Motion;
     define(['foundation'], function() {
       return Abide;
     });
-
 }(Foundation, jQuery);
 
 /**
@@ -2119,7 +2086,6 @@ Foundation.Motion = Motion;
       this.$tabs = this.$element.children('[data-accordion-item]');
     }
     this.$tabs.each(function(idx, el){
-
       var $el = $(el),
           $content = $el.find('[data-tab-content]'),
           id = $content[0].id || Foundation.GetYoDigits(6, 'accordion'),
@@ -2657,7 +2623,6 @@ Foundation.Motion = Motion;
       this.$wrapper = $(this.options.wrapper).addClass('is-drilldown').css(this._getMaxDims());
       this.$element.wrap(this.$wrapper);
     }
-
   };
   /**
    * Adds event handlers to elements in the menu.
@@ -2829,7 +2794,6 @@ Foundation.Motion = Motion;
      * @event Drilldown#hide
      */
     $elem.trigger('hide.zf.drilldown', [$elem]);
-
   };
   /**
    * Iterates through the nested menus to calculate the min-height, and max-width for the menu.
@@ -3104,7 +3068,6 @@ Foundation.Motion = Motion;
       }
     }
     this.$anchor.add(this.$element).on('keydown.zf.dropdown', function(e) {
-
       var $target = $(this),
         visibleFocusableElements = Foundation.Keyboard.findFocusable(_this.$element);
 
@@ -3169,7 +3132,6 @@ Foundation.Motion = Motion;
         $focusable.eq(0).focus();
       }
     }
-
 
     /**
      * Fires once the dropdown is visible.
@@ -3513,7 +3475,6 @@ Foundation.Motion = Motion;
         }
       }
       Foundation.Keyboard.handleKey(e, _this, functions);
-
     });
   };
   /**
@@ -3734,7 +3695,7 @@ Foundation.Motion = Motion;
 
     eqGroup.height('inherit');
     heights = eqGroup.map(function () { return $(this).outerHeight(false);}).get();
-    
+
     return heights;
   };
   /**
@@ -3783,7 +3744,6 @@ Foundation.Motion = Motion;
     define(['foundation'], function() {
       return Equalizer;
     });
-
 }(Foundation, jQuery);
 
 /**
@@ -3968,7 +3928,6 @@ Foundation.Motion = Motion;
     define(['foundation'], function() {
       return Interchange;
     });
-
 }(Foundation, jQuery);
 
 /**
@@ -4181,7 +4140,6 @@ Foundation.Motion = Motion;
     define(['foundation'], function() {
       return Magellan;
     });
-
 }(Foundation, jQuery);
 
 /**
@@ -4191,7 +4149,6 @@ Foundation.Motion = Motion;
  * @requires foundation.util.motion
  */
 !function($, Foundation) {
-
 'use strict';
 
 /**
@@ -4503,7 +4460,6 @@ OffCanvas.prototype.destroy = function(){
 };
 
 Foundation.plugin(OffCanvas, 'OffCanvas');
-
 }(jQuery, Foundation);
 
 /**
@@ -4867,7 +4823,6 @@ Foundation.plugin(OffCanvas, 'OffCanvas');
         this._updateBullets(idx);
       }
       if(this.options.useMUI){
-
         Foundation.Motion.animateIn(
           $newSlide.addClass('is-active').css({'position': 'absolute', 'top': 0}),
           this.options['animInFrom' + dirIn],
@@ -4923,7 +4878,6 @@ Foundation.plugin(OffCanvas, 'OffCanvas');
   };
 
   Foundation.plugin(Orbit, 'Orbit');
-
 }(jQuery, window.Foundation);
 
 /**
@@ -5069,7 +5023,6 @@ Foundation.plugin(OffCanvas, 'OffCanvas');
     Foundation.unregisterPlugin(this);
   };
   Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
-
 }(Foundation, jQuery);
 
 /**
@@ -5078,7 +5031,6 @@ Foundation.plugin(OffCanvas, 'OffCanvas');
  * @requires foundation.util.mediaQuery
  */
 !function($, Foundation) {
-
 'use strict';
 
 /**
@@ -5176,7 +5128,6 @@ ResponsiveToggle.prototype.destroy = function(){
   //TODO this...
 };
 Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
-
 }(jQuery, Foundation);
 
 /**
@@ -5380,7 +5331,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
       });
     }
 
-
     if(this.options.closeOnClick && this.options.overlay){
       this.$overlay.off('.zf.reveal').on('click.zf.reveal', this.close.bind(this));
     }
@@ -5475,7 +5425,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
       }
     });
 
-
     // handle accessibility
     this.$element.attr({'aria-hidden': false}).attr('tabindex', -1).focus()
     /**
@@ -5556,7 +5505,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
         }
       });
     });
-
   };
 
   /**
@@ -5655,7 +5603,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
     define(['foundation'], function() {
       return Reveal;
     });
-
 }(Foundation, jQuery);
 
 /**
@@ -5832,7 +5779,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
       isDbl = true;
 
       this._setHandlePos(this.$handle, this.options.initialStart, true, function(){
-
         _this._setHandlePos(_this.$handle2, _this.options.initialEnd);
       });
       // this.$handle.triggerHandler('click.zf.slider');
@@ -5937,7 +5883,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
       'id': id,
       'max': this.options.end,
       'min': this.options.start
-
     });
     this.handles.eq(idx).attr({
       'role': 'slider',
@@ -5994,7 +5939,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
             secndHndlPos = absPosition(this.$handle2, direction, barXY, param);
             $handle = firstHndlPos <= secndHndlPos ? this.$handle : this.$handle2;
       }
-
     }else{//change event on input
       value = val;
       hasVal = true;
@@ -6251,7 +6195,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
     this.$container = $parent.length ? $parent : $(this.options.container).wrapInner(this.$element);
     this.$container.addClass(this.options.containerClass);
 
-
     this.$element.addClass(this.options.stickyClass)
                  .attr({'data-resize': id});
 
@@ -6264,7 +6207,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
     }else{
       this.$anchor = this.options.anchor ? $('#' + this.options.anchor) : $(document.body);
     }
-
 
     this._setSizes(function(){
       _this._calc(false);
@@ -6456,7 +6398,7 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
       css[stickTo] = 0;
       css[notStuckTo] = anchorPt;
     }
-    
+
     css['left'] = '';
     this.isStuck = false;
     this.$element.removeClass('is-stuck is-at-' + stickTo)
@@ -6509,7 +6451,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
     this._setBreakPoints(newContainerHeight, function(){
       if(cb){ cb(); }
     });
-
   };
   /**
    * Sets the upper and lower breakpoints for the element to become sticky/unsticky.
@@ -6789,7 +6730,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
     });
   };
 
-
   /**
    * Opens the tab `$targetContent` defined by `$target`.
    * @param {jQuery} $target - Tab to open.
@@ -7039,7 +6979,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
     define(['foundation'], function() {
       return Toggler;
     });
-
 }(Foundation, jQuery);
 
 /**
@@ -7254,7 +7193,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
     }
     this.classChanged = true;
     this.counter--;
-
   };
 
   /**
@@ -7309,7 +7247,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
      * @event Closeme#tooltip
      */
     this.$element.trigger('closeme.zf.tooltip', this.template.attr('id'));
-
 
     this.template.attr({
       'data-is-active': true,
@@ -7369,7 +7306,6 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
     var isFocus = false;
 
     if(!this.options.disableHover){
-
       this.$element
       .on('mouseenter.zf.tooltip', function(e){
         if(!_this.isActive){

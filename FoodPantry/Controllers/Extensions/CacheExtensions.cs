@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Caching;
 
 namespace FoodPantry.Controllers.Extensions
@@ -19,5 +16,4 @@ namespace FoodPantry.Controllers.Extensions
             return (T)result;
         }
     }
-
 }

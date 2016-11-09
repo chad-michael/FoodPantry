@@ -1,14 +1,15 @@
 ﻿@model PagedList.IPagedList<FoodPantryLog>
 @using System.Web.Mvc
 @using System.Web.Mvc.Html
+@using FoodPantry.Data.Models
 @using PagedList.Mvc;
-@using FoodPantry.Models;
+@using FoodPantry.Data.Models;
 
 @{
     ViewBag.Title = "Food Pantry Intake";
 }
 <h2>@ViewBag.Title</h2>
-<hr/>
+<hr />
 @using (Html.BeginForm("Index", "Home", FormMethod.Get))
 {
     <div class="row">
@@ -32,17 +33,17 @@
                     <strong>Current Terms</strong>
                 </div>
                 <div class="large-9 columns">
-                    <span>|</span> 
+                    <span>|</span>
                     @foreach (Term term in ViewBag.Terms)
                     {
-                        @term.Code <span>|</span> 
+                        @term.Code <span>|</span>
                     }
                 </div>
             </div>
         </div>
     </div>
 }
-<hr/>
+<hr />
 
 @if (Model != null)
 {
@@ -50,17 +51,18 @@
         <div class="large-3 columns">
             <div class="row">
                 <div class="large-12 columns">
-                    <img class="thumbnail large-12" src="@Url.RouteUrl("Default", new { Controller = "FoodPantryLogs", Action = "UserImage", id = ViewBag.studentId })" alt="IMAGES" />
+                    <img class="thumbnail" src="@Url.RouteUrl("Default", new { Controller = "FoodPantryLogs", Action = "UserImage", id = ViewBag.studentId })" alt="IMAGES" />
                 </div>
             </div>
             <div class="row">
                 <div class="large-12 columns">
                     @if (ViewBag.transcript == null)
                     {
-                        <div class="warning label large-12 text-center">Not enrolled this term.</div>
+                        <div class="warning label text-center">Not enrolled this term.</div>
                     }
-                    else {
-                        <div class="success label large-12 text-center">Enrolled in @ViewBag.transcript.Code</div>
+                    else
+                    {
+                        <div class="success label text-center">Enrolled in @ViewBag.transcript.Code</div>
                     }
                     @if (@ViewBag.studentInfo == null)
                     {
@@ -70,12 +72,12 @@
                     {
                         <h4 class="text-center">@ViewBag.studentInfo.FirstName @ViewBag.studentInfo.LastName</h4>
                         <div class="text-center">
-                            @if (ViewBag.studentInfo.PreferredAddress != null && ((IList<string>) ViewBag.studentInfo.PreferredAddress).Count > 0)
+                            @if (ViewBag.studentInfo.PreferredAddress != null && ((IList<string>)ViewBag.studentInfo.PreferredAddress).Count > 0)
                             {
                                 @ViewBag.studentInfo.PreferredAddress[0]
-                                if (((IList<string>) ViewBag.studentInfo.PreferredAddress).Count > 1)
+                                if (((IList<string>)ViewBag.studentInfo.PreferredAddress).Count > 1)
                                 {
-                                    <br/>
+                                    <br />
                                     @ViewBag.studentInfo.PreferredAddress[1]
                                 }
                             }
@@ -135,29 +137,23 @@
                     </div>
                 </div>
             </div>
-            <hr/>
+            <hr />
             <div class="row">
                 <div class="large-8 columns">
                     <h4 class="subheader">Student Activity</h4>
                 </div>
-                <div class="large-4 columns text-right">
+                <div class="columns large-4 columns text-right">
                     @Html.ActionLink("Create Entry", "CreateWithStudent", new { Controller = "FoodPantryLogs", StudentIDNO = ViewBag.studentId }, new { @class = "button small" })
                 </div>
             </div>
-            <table class="large-12">
+            <table class="table-responsive">
                 <tr>
-                    <th>
-                        Date Inserted
-                    </th>
-                    <th>
-                        # of Small Bags
-                    </th>
-                    <th>
-                        # of Large Bags
-                    </th>
-                    <th></th>
+                    <th>Date Inserted</th>
+                    <th># of Small Bags</th>
+                    <th># of Large Bags</th>
+                    <td></td>
                 </tr>
-                @foreach (FoodPantryLog item in Model)
+                @foreach (var item in Model)
                 {
                     <tr>
                         <td>

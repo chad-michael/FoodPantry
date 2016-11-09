@@ -1,10 +1,9 @@
-﻿using FoodPantry.Data.Repositories;
-using FoodPantry.Models;
+﻿using FoodPantry.Data.Models;
+using FoodPantry.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web;
 using System.Web.Script.Serialization;
 
 namespace FoodPantry.Core.Repositories

@@ -1,4 +1,4 @@
-﻿@model PagedList.IPagedList<FoodPantry.Models.FoodPantryLog>
+﻿@model PagedList.IPagedList<FoodPantry.Data.Models.FoodPantryLog>
 @using PagedList.Mvc;
 
 @{
@@ -13,7 +13,7 @@
             @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @placeholder = "Search..." })
         </div>
         <div class="large-2 columns">
-            <input type="submit" class="button" value="Search"/>
+            <input type="submit" class="button" value="Search" />
         </div>
         <div class="large-2 columns text-right">
             @Html.ActionLink("Create New", "Create", null, new { @class = "button" })
@@ -35,36 +35,36 @@
         <th>
             Qty SmallBag
         </th>
-        <th></th>
+        <td></td>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @if (String.IsNullOrEmpty(item.StudentName))
-            {
-                <span>No Name</span>
-            }
-            else
-            {
-                @Html.DisplayFor(modelItem => item.StudentName)
-            }
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateInserted)
-        </td>
-        <td class="text-center">
-            @Html.DisplayFor(modelItem => item.Qty_LargeBag)
-        </td>
-        <td class="text-center">
-            @Html.DisplayFor(modelItem => item.Qty_SmallBag)
-        </td>
-        <td class="text-right">
-            @Html.ActionLink("Edit", "Edit", new { id = item.FoodPantryLogID })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (string.IsNullOrEmpty(item.StudentName))
+                {
+                    <span>No Name</span>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.StudentName)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateInserted)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Qty_LargeBag)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Qty_SmallBag)
+            </td>
+            <td class="text-right">
+                @Html.ActionLink("Edit", "Edit", new { id = item.FoodPantryLogID })
+            </td>
+        </tr>
+    }
 </table>
 <br />
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount

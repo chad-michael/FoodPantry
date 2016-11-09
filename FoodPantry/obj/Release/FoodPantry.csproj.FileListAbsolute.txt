@@ -85,6 +85,7 @@ C:\Users\chadmichael\Documents\food-pantry\FoodPantry\bin\Microsoft.Owin.Securit
 C:\Users\chadmichael\Documents\food-pantry\FoodPantry\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\chadmichael\Documents\food-pantry\FoodPantry\obj\Release\FoodPantry.dll
 C:\Users\chadmichael\Documents\food-pantry\FoodPantry\obj\Release\FoodPantry.pdb
+C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\csc.exe
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\csc.exe.config
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\csc.rsp
@@ -98,7 +99,6 @@ C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\Microsoft.CodeAna
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\System.AppContext.dll
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\System.Collections.Immutable.dll
@@ -114,6 +114,8 @@ C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\roslyn\VBCSCompiler.exe.
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\FoodPantry.dll.config
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\FoodPantry.dll
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\FoodPantry.pdb
+C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\obj\Release\FoodPantry.dll
+C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\obj\Release\FoodPantry.pdb
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\Antlr3.Runtime.dll
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\EntityFramework.dll
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\EntityFramework.SqlServer.dll
@@ -170,5 +172,4 @@ C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\Microsoft.Owin.Security.
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\Microsoft.Owin.Security.Google.xml
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\obj\Release\FoodPantry.dll
-C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\obj\Release\FoodPantry.pdb
+C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\obj\Release\FoodPantry.csprojResolveAssemblyReference.cache

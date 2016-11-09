@@ -1,4 +1,4 @@
-namespace FoodPantry.Models
+namespace FoodPantry.Data.Models
 {
     using System;
     using System.Collections.Generic;

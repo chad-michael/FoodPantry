@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace FoodPantry.Data.Models
 {
@@ -24,7 +22,7 @@ namespace FoodPantry.Data.Models
         public IList<string> RaceCodes;
         public IList<string> EthnicCodes;
         public IList<string> Ethnicities;
-	    public string MaritalStatus;
+        public string MaritalStatus;
         public long DegreePlanId;
         public IList<string> ProgramIds;
         public IList<string> StudentRestrictionIds;

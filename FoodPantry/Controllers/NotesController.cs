@@ -1,9 +1,7 @@
-﻿using FoodPantry.Models;
+﻿using FoodPantry.Data.Models;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace FoodPantry.Controllers
@@ -14,13 +12,13 @@ namespace FoodPantry.Controllers
         /// <summary>
         /// Access to the food pantry database.
         /// </summary>
-        private Models.FoodPantry db = new Models.FoodPantry();
+        private readonly Data.Models.FoodPantryDataModel _db = new Data.Models.FoodPantryDataModel();
 
         // POST: Notes/Edit/5
         [HttpPost]
         public ActionResult Edit([Bind(Include = "StudentIDNO,Notes")] Note newNote)
         {
-            var note = db.Notes.Where(s => s.StudentIDNO == newNote.StudentIDNO).FirstOrDefault();
+            var note = _db.Notes.FirstOrDefault(s => s.StudentIDNO == newNote.StudentIDNO);
             if (note != null)
             {
                 note.Notes = newNote.Notes;
@@ -32,13 +30,13 @@ namespace FoodPantry.Controllers
             note.Updated = DateTime.Now;
             if (note.NoteID == 0)
             {
-                db.Notes.Add(note);
+                _db.Notes.Add(note);
             }
             else
             {
-                db.Entry(note).State = EntityState.Modified;
+                _db.Entry(note).State = EntityState.Modified;
             }
-            db.SaveChanges();
+            _db.SaveChanges();
             return RedirectToAction("Index", "Home", new { studentId = note.StudentIDNO });
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace FoodPantry.Models
+namespace FoodPantry.Data.Models
 {
     using System;
     using System.Collections.Generic;
@@ -8,9 +8,12 @@
 
     public partial class Note
     {
+        [Key]
+        [Column(Order = 0)]
         public int NoteID { get; set; }
 
-        [Required]
+        [Key]
+        [Column(Order = 1)]
         [StringLength(10)]
         public string StudentIDNO { get; set; }
 

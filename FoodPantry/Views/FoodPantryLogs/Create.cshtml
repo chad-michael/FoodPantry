@@ -1,7 +1,10 @@
-﻿@model FoodPantry.Models.FoodPantryLog
+﻿@using FoodPantry.Data.Models
+@using FoodPantry.Controllers;
+
+@model FoodPantry.Data.Models.FoodPantryLog
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create new ";
 }
 
 <h2>Food Pantry</h2>
@@ -16,18 +19,35 @@
 </div>
 <hr />
 
-@using (Html.BeginForm("Create", "FoodPantryLogs")) 
+@using (Html.BeginForm("Create", "FoodPantryLogs"))
 {
     @Html.AntiForgeryToken()
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "form-error is-visible" })
 
         <div class="row">
+            <div class="large-4 columns end">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LocationID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+
+                        @{
+                            var db = new FoodPantryDataModel();
+
+                            @Html.DropDownList("LocationID", new SelectList(db.Locations, "LocationID", "LocationDesc"), htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Location.LocationDesc, "", new { @class = "text-danger" })
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="large-2 columns">
                 <div class="form-group">
                     @Html.LabelFor(model => model.StudentIDNO, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.StudentIDNO, new { htmlAttributes = new { @class = "form-control",  } })
+                        @Html.EditorFor(model => model.StudentIDNO, new { htmlAttributes = new { @class = "form-control", } })
                         @Html.ValidationMessageFor(model => model.StudentIDNO, "", new { @class = "form-error is-visible" })
                     </div>
                 </div>
@@ -292,8 +312,8 @@
             </div>
         </div>
     </div>
-}
+                            }
 
 @*@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}*@
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

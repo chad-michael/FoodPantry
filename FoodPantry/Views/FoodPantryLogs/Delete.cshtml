@@ -1,4 +1,4 @@
-﻿@model FoodPantry.Models.FoodPantryLog
+﻿@model FoodPantry.Data.Models.FoodPantryLog
 
 @{
     ViewBag.Title = "Delete";
@@ -198,11 +198,11 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.EnrollmentStatu.Title)
+                @Html.DisplayNameFor(model => model.EnrollmentStatus.Title)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.EnrollmentStatu.Title)
+                @Html.DisplayFor(model => model.EnrollmentStatus.Title)
                 <hr />
             </dd>
 
@@ -231,7 +231,6 @@
     </div>
 </div>
 
-
 <div class="row">
     <div class="large-6 columns">
         @if (ViewBag.Referrer != null)
@@ -248,7 +247,7 @@
         {
             @Html.AntiForgeryToken()
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="button btn-default" />
+                <input type="submit" value="Delete" class="btn btn-default" />
             </div>
         }
     </div>

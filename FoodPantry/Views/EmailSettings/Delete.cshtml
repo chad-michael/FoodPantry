@@ -1,4 +1,4 @@
-﻿@model FoodPantry.Models.EmailSetting
+﻿@model FoodPantry.Data.Models.EmailSetting
 
 @{
     ViewBag.Title = "Delete";
@@ -66,10 +66,10 @@
         <dd>
             @Html.DisplayFor(model => model.Deleted)
         </dd>
-
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

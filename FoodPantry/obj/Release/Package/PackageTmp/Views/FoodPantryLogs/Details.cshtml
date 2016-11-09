@@ -1,4 +1,4 @@
-﻿@model FoodPantry.Models.FoodPantryLog
+﻿@model FoodPantry.Data.Models.FoodPantryLog
 
 @{
     ViewBag.Title = "Details";
@@ -22,38 +22,44 @@
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.Title)
-            <hr/></dd>
+                <hr />
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.StudentIDNO)
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.StudentIDNO)
-            <hr/></dd>
+                <hr />
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.StudentName)
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.StudentName)
-            <hr/></dd>
+                <hr />
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.DateInserted)
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.DateInserted)
-            <hr/></dd>
+                <hr />
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.NoInHousehold)
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.NoInHousehold)
-            <hr/></dd>
+                <hr />
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.DeltaStudCount)
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => model.DeltaStudCount)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.NoChildren0Thru5)
@@ -61,7 +67,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.NoChildren0Thru5)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.NoChildren6Thru8)
@@ -69,7 +76,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.NoChildren6Thru8)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.ExplainOther)
@@ -77,7 +85,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.ExplainOther)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Signature)
@@ -85,7 +94,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Signature)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Inc_Loans)
@@ -93,7 +103,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Inc_Loans)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Inc_Spouse)
@@ -101,7 +112,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Inc_Spouse)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Inc_OnCampus)
@@ -109,7 +121,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Inc_OnCampus)
-            <hr/></dd>
+                <hr />
+            </dd>
         </dl>
     </div>
     <div class="large-6 columns">
@@ -120,7 +133,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Inc_OffCampus)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Inc_Scholarships)
@@ -128,7 +142,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Inc_Scholarships)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Inc_ParentalSupport)
@@ -136,7 +151,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Inc_ParentalSupport)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Inc_Other)
@@ -144,7 +160,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Inc_Other)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Inc_Grants)
@@ -152,7 +169,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Inc_Grants)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Qty_LargeBag)
@@ -160,7 +178,8 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Qty_LargeBag)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.Qty_SmallBag)
@@ -168,15 +187,17 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Qty_SmallBag)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.EnrollmentStatu.Title)
+                @Html.DisplayNameFor(model => model.EnrollmentStatus.Title)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.EnrollmentStatu.Title)
-            <hr/></dd>
+                @Html.DisplayFor(model => model.EnrollmentStatus.Title)
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.InfoSource.Title)
@@ -184,14 +205,16 @@
 
             <dd>
                 @Html.DisplayFor(model => model.InfoSource.Title)
-            <hr/></dd>
+                <hr />
+            </dd>
 
             <dt>
                 @Html.DisplayNameFor(model => model.StudentType1.StudentTypeDesc)
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.StudentType1.StudentTypeDesc)
-            <hr/></dd>
+                <hr />
+            </dd>
         </dl>
     </div>
 </div>

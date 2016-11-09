@@ -1,8 +1,9 @@
-namespace FoodPantry.Models
+using System.ComponentModel;
+
+namespace FoodPantry.Data.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -17,7 +18,6 @@ namespace FoodPantry.Models
 
         [Required]
         [StringLength(10, MinimumLength = 1)]
-        [DisplayName("Student ID")]
         public string StudentIDNO { get; set; }
 
         [StringLength(100, MinimumLength = 1)]
@@ -39,7 +39,7 @@ namespace FoodPantry.Models
         [Range(0, short.MaxValue)]
         public short? NoChildren0Thru5 { get; set; }
 
-        [DisplayName("# of Children 6 to 8")]
+        [DisplayName("# of Children 6 to 18")]
         [Range(0, short.MaxValue)]
         public short? NoChildren6Thru8 { get; set; }
 
@@ -92,17 +92,24 @@ namespace FoodPantry.Models
         [DisplayName("# Small Bags")]
         public short? Qty_SmallBag { get; set; }
 
+        [DisplayName("Water Bottle")]
+        public DateTime? WaterBottle { get; set; }
+
+        [DisplayName("Campus Location of Intake")]
+        public byte? LocationID { get; set; }
+
         [DisplayName("Enrollment Status")]
-        public virtual EnrollmentStatu EnrollmentStatu { get; set; }
+        public virtual EnrollmentStatus EnrollmentStatus { get; set; }
 
         [DisplayName("Info Sources")]
         public virtual InfoSource InfoSource { get; set; }
 
+        [DisplayName("Location of Intake")]
+        [ForeignKey("LocationID")]
+        public virtual Location Location { get; set; }
+
         [DisplayName("Student Type")]
         [ForeignKey("StudentType")]
         public virtual StudentType StudentType1 { get; set; }
-
-        [DisplayName("Water Bottle")]
-        public DateTime? WaterBottle { get; set; }
     }
 }

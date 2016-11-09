@@ -1,11 +1,11 @@
-﻿using System;
+﻿using FoodPantry.Data.Models;
+using PagedList;
+using System;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using FoodPantry.Models;
-using PagedList;
 
 namespace FoodPantry.Controllers
 {
@@ -15,44 +15,30 @@ namespace FoodPantry.Controllers
     [Authorize(Roles = "FoodPantry_Admins")]
     public class EmailSettingsController : Controller
     {
-        /// <summary>
-        /// Access to the food pantry database.
-        /// </summary>
-        private Models.FoodPantry db = new Models.FoodPantry();
+        private readonly FoodPantryDataModel _db = new FoodPantryDataModel();
 
-        /// <summary>
-        /// Displays all the email settings.
-        /// </summary>
-        /// <param name="page">to display</param>
-        /// <returns>the index view.</returns>
         // GET: EmailSettings
         public ActionResult Index(int? page)
         {
-            int pageSize = 10;
-            int pageNumber = (page ?? 1);
-            return View(db.EmailSettings.OrderBy(s => s.EmailID).ToPagedList(pageNumber, pageSize));
+            const int pageSize = 10;
+            var pageNumber = (page ?? 1);
+            return View(_db.EmailSettings.OrderBy(s => s.EmailID).ToPagedList(pageNumber, pageSize));
         }
 
-        /// <summary>
-        /// Details will display information about the email settings. We will keep in place but 
-        /// just rediret to edit action.
-        /// </summary>
-        /// <param name="id">of settings to look at.</param>
-        /// <returns>The details view.</returns>
         // GET: EmailSettings/Details/5
         public ActionResult Details(int? id)
         {
             return RedirectToAction("Edit", new { @id = id });
-            if (id == null)
+            if (id != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                EmailSetting emailSetting = _db.EmailSettings.Find(id);
+                if (emailSetting == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(emailSetting);
             }
-            EmailSetting emailSetting = db.EmailSettings.Find(id);
-            if (emailSetting == null)
-            {
-                return HttpNotFound();
-            }
-            return View(emailSetting);
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
 
         /// <summary>
@@ -72,7 +58,7 @@ namespace FoodPantry.Controllers
         /// <param name="emailSetting">to save to the database.</param>
         /// <returns>The create view or redirect if successful</returns>
         // POST: EmailSettings/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -83,8 +69,8 @@ namespace FoodPantry.Controllers
             emailSetting.DateModified = DateTime.Now;
             if (ModelState.IsValid)
             {
-                db.EmailSettings.Add(emailSetting);
-                db.SaveChanges();
+                _db.EmailSettings.Add(emailSetting);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -103,7 +89,7 @@ namespace FoodPantry.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmailSetting emailSetting = db.EmailSettings.Find(id);
+            EmailSetting emailSetting = _db.EmailSettings.Find(id);
             if (emailSetting == null)
             {
                 return HttpNotFound();
@@ -117,7 +103,7 @@ namespace FoodPantry.Controllers
         /// <param name="id">of the email setting to edit.</param>
         /// <returns>editing view of for the email setting.</returns>
         // POST: EmailSettings/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -127,8 +113,8 @@ namespace FoodPantry.Controllers
             emailSetting.DateAdded = DateTime.Now;
 
             if (!ModelState.IsValid) return View(emailSetting);
-            db.Entry(emailSetting).State = EntityState.Modified;
-            db.SaveChanges();
+            _db.Entry(emailSetting).State = EntityState.Modified;
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -145,7 +131,7 @@ namespace FoodPantry.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmailSetting emailSetting = db.EmailSettings.Find(id);
+            EmailSetting emailSetting = _db.EmailSettings.Find(id);
             if (emailSetting == null)
             {
                 return HttpNotFound();
@@ -164,9 +150,9 @@ namespace FoodPantry.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             return RedirectToAction("Index");
-            EmailSetting emailSetting = db.EmailSettings.Find(id);
-            db.EmailSettings.Remove(emailSetting);
-            db.SaveChanges();
+            EmailSetting emailSetting = _db.EmailSettings.Find(id);
+            _db.EmailSettings.Remove(emailSetting);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -178,7 +164,7 @@ namespace FoodPantry.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

@@ -1,7 +1,23 @@
-﻿@model FoodPantry.Models.FoodPantryLog
+﻿@using FoodPantry.Controllers;
+@using FoodPantry.Data.Models;
+
+@model FoodPantryLog
 
 @{
     ViewBag.Title = "Edit";
+}
+
+@functions
+{
+    HtmlString UserName()
+    {
+        string identity = User.Identity.ToString();
+        var name = identity.Remove(0, 6);
+        var msg = "ID10-T ERROR! does not compute.";
+
+        return new HtmlString($"{name}");
+    }
+
 }
 
 <h2>Food Pantry</h2>
@@ -25,6 +41,22 @@
         @Html.HiddenFor(model => model.FoodPantryLogID)
         @Html.HiddenFor(model => model.DateInserted)
 
+        <div class="row">
+            <div class="large-4 columns end">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LocationID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+
+                        @{
+                            var db = new FoodPantryDataModel();
+
+                            @Html.DropDownList("LocationID", new SelectList(db.Locations, "LocationID", "LocationDesc", Model?.LocationID), htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Location.LocationDesc, "", new { @class = "text-danger" })
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="large-2 columns">
                 <div class="form-group">
@@ -267,8 +299,8 @@
             </div>
         </div>
     </div>
-}
+                            }
 
 @*@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}*@
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

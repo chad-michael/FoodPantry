@@ -1,9 +1,5 @@
 ﻿using FoodPantry.Core.Repositories;
 using FoodPantry.Data.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
 
@@ -14,55 +10,42 @@ namespace FoodPantry.Core.Services
     /// </summary>
     public class TermsService
     {
-        /// <summary>
-        /// The terms repository to get informatino from.
-        /// </summary>
-        private ITermsRespository termRepository;
+        private ITermsRespository _termRepository;
 
-        /// <summary>
-        /// The parent controller to access the session.
-        /// </summary>
-        private Controller ParentController;
+        private readonly Controller _parentController;
 
-        /// <summary>
-        /// Get the terms repository.
-        /// </summary>
         internal ITermsRespository TermRepository
         {
             get
             {
-                if (termRepository != null)
+                if (_termRepository != null)
                 {
-                    return termRepository;
+                    return _termRepository;
                 }
                 var serviceUrl = WebConfigurationManager.AppSettings["ColleagueWebServiceUrl"];
-                var serivceSessionToken = (string)ParentController.Session["ColleagueWebserviceSessionToken"];
+                var serivceSessionToken = (string)_parentController.Session["ColleagueWebserviceSessionToken"];
                 if (string.IsNullOrEmpty(serivceSessionToken))
                 {
                     var username = WebConfigurationManager.AppSettings["ColleagueWebServiceUsername"];
                     var password = WebConfigurationManager.AppSettings["ColleagueWebServicePassword"];
-                    termRepository = new ColleagueWsTermsRepository(serviceUrl, username, password);
-                    ParentController.Session["ColleagueWebserviceSessionToken"] = ((ColleagueWsRepository)termRepository).SessionToken;
+                    _termRepository = new ColleagueWsTermsRepository(serviceUrl, username, password);
+                    _parentController.Session["ColleagueWebserviceSessionToken"] = ((ColleagueWsRepository)_termRepository).SessionToken;
                 }
                 else
                 {
-                    termRepository = new ColleagueWsTermsRepository(serviceUrl, serivceSessionToken);
+                    _termRepository = new ColleagueWsTermsRepository(serviceUrl, serivceSessionToken);
                 }
-                return termRepository;
+                return _termRepository;
             }
             set
             {
-                termRepository = value;
+                _termRepository = value;
             }
         }
 
-        /// <summary>
-        /// Build the terms service with the parent controller.
-        /// </summary>
-        /// <param name="parentController"></param>
         public TermsService(Controller parentController)
         {
-            ParentController = parentController;
+            _parentController = parentController;
         }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
 
 namespace FoodPantry.Core.Repositories
 {
@@ -103,7 +100,8 @@ namespace FoodPantry.Core.Repositories
                     client.Headers.Add("X-CustomCredentials: " + SessionToken);
                     return client.DownloadString(ServiceUrl + service);
                 }
-                catch (Exception) {
+                catch (Exception)
+                {
                     return "{}";
                 }
             }

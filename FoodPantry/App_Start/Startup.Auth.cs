@@ -1,6 +1,6 @@
-﻿using Owin;
+﻿using Microsoft.IdentityModel.Claims;
+using Owin;
 using System.Web.Helpers;
-using Microsoft.IdentityModel.Claims;
 
 namespace FoodPantry
 {
