@@ -5,9 +5,24 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>\\uatweb4\d$\www\apps\FoodPantry</_PublishTargetUrl>
+    <_PublishTargetUrl>\\web4a\d$\www\apps\FoodPantry</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="App_Start/BundleConfig.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="App_Start/FilterConfig.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="App_Start/IdentityConfig.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="App_Start/RouteConfig.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="App_Start/Startup.Auth.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
@@ -27,13 +42,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/FoodPantry.dll">
-      <publishTime>11/09/2016 10:14:56</publishTime>
+      <publishTime>11/16/2016 08:58:12</publishTime>
     </File>
     <File Include="bin/FoodPantry.dll.config">
       <publishTime>11/03/2016 14:51:18</publishTime>
     </File>
     <File Include="bin/FoodPantry.pdb">
-      <publishTime>10/03/2016 15:51:25</publishTime>
+      <publishTime>11/16/2016 08:52:28</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>04/03/2015 17:07:22</publishTime>
@@ -54,7 +69,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/03/2015 17:07:22</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>08/31/2016 03:39:40</publishTime>
+      <publishTime>11/09/2016 11:03:27</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml">
       <publishTime>08/31/2016 03:39:40</publishTime>
@@ -120,7 +135,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>06/13/2016 23:06:14</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.xml">
       <publishTime>06/13/2016 23:06:14</publishTime>
@@ -141,82 +156,82 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/30/2013 17:36:38</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe.config">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/csc.rsp">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/csi.exe">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/csi.rsp">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
       <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:27</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:27</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/System.AppContext.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/System.IO.FileSystem.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe.config">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.rsp">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
-      <publishTime>06/27/2016 14:50:24</publishTime>
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>01/28/2015 04:04:30</publishTime>
@@ -264,43 +279,136 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2014 13:57:34</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
-      <publishTime>11/03/2016 11:22:04</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css.map">
-      <publishTime>11/03/2016 10:03:25</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.min.css">
-      <publishTime>11/03/2016 10:03:25</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.min.css.map">
-      <publishTime>11/03/2016 10:03:25</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>11/03/2016 11:22:08</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/bootstrap.css.map">
-      <publishTime>11/03/2016 10:03:25</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>11/03/2016 10:03:25</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css.map">
-      <publishTime>11/03/2016 10:03:25</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/foundation/app.css">
-      <publishTime>11/03/2016 11:22:14</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/foundation/foundation-datepicker.css">
-      <publishTime>11/03/2016 11:22:16</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/foundation/foundation.css">
-      <publishTime>11/03/2016 11:22:18</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/PagedList.css">
-      <publishTime>11/03/2016 11:22:21</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Content/profile-icon.png">
       <publishTime>04/14/2016 08:41:00</publishTime>
+    </File>
+    <File Include="Controllers/EmailSettingsController.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Controllers/Extensions/CacheExtensions.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Controllers/FoodPantryLogsController.cs">
+      <publishTime>11/11/2016 10:16:51</publishTime>
+    </File>
+    <File Include="Controllers/HomeController.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Controllers/NotesController.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Core/Repositories/ColleagueWsRepository.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Core/Repositories/ColleagueWsStudentsRepository.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Core/Repositories/ColleagueWsTermsRepository.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Core/Services/StudentService.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Core/Services/TermsService.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/BagCounts.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/EmailAddress.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/EmailSetting.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/EnrollmentStatus.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/FoodPantryDataModel.cs">
+      <publishTime>11/16/2016 08:52:23</publishTime>
+    </File>
+    <File Include="Data/Models/FoodPantryLog.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/FPService.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/GradeRestriction.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/IncomeSource.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/InfoSource.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/Location.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/Note.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/SentNotice.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/Setting.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/Student.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/StudentType.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/Term.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/UngradedTerm.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Models/VisitLog.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Repositories/IStudentsRespository.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Data/Repositories/ITermsRespository.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>09/07/2016 16:48:29</publishTime>
@@ -309,7 +417,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/03/2016 10:03:25</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.svg">
-      <publishTime>11/03/2016 11:23:22</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
       <publishTime>11/03/2016 10:03:25</publishTime>
@@ -320,8 +428,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="fonts/glyphicons-halflings-regular.woff2">
       <publishTime>11/03/2016 10:03:25</publishTime>
     </File>
+    <File Include="FoodPantry.csproj">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="FoodPantry.csproj.user">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
     <File Include="Global.asax">
       <publishTime>04/14/2016 08:41:00</publishTime>
+    </File>
+    <File Include="Global.asax.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="obj/Debug/build.force">
       <publishTime>11/03/2016 15:27:47</publishTime>
@@ -756,13 +873,100 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/03/2016 15:04:51</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/07/2016 10:02:48</publishTime>
+      <publishTime>11/09/2016 11:03:27</publishTime>
+    </File>
+    <File Include="Project_Readme.html">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Properties/AssemblyInfo.cs">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Local.pubxml">
+      <publishTime>11/16/2016 08:53:38</publishTime>
+    </File>
+    <File Include="roslyn/csc.exe">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/csc.exe.config">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/csc.rsp">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/csi.exe">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/csi.rsp">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>11/09/2016 11:03:27</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>11/09/2016 11:03:27</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/System.AppContext.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/System.Collections.Immutable.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/System.IO.FileSystem.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/System.Reflection.Metadata.dll">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/vbc.exe">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/vbc.exe.config">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/vbc.rsp">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/VBCSCompiler.exe">
+      <publishTime>11/09/2016 11:03:28</publishTime>
+    </File>
+    <File Include="roslyn/VBCSCompiler.exe.config">
+      <publishTime>11/09/2016 11:03:28</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
-      <publishTime>11/03/2016 11:23:39</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
-      <publishTime>11/03/2016 10:03:24</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Scripts/foundation/app.js">
       <publishTime>04/14/2016 08:41:00</publishTime>
@@ -771,7 +975,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/14/2016 08:41:00</publishTime>
     </File>
     <File Include="Scripts/foundation/foundation.js">
-      <publishTime>11/03/2016 11:23:49</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Scripts/foundation/foundation.min.js">
       <publishTime>04/14/2016 08:41:00</publishTime>
@@ -782,11 +986,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/foundation/vendor/what-input.min.js">
       <publishTime>04/14/2016 08:41:00</publishTime>
     </File>
+    <File Include="Scripts/jquery-1.10.2.intellisense.js">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.0.intellisense.js">
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
     <File Include="Scripts/jquery-2.2.0.js">
-      <publishTime>11/03/2016 11:24:16</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
     </File>
     <File Include="Scripts/jquery-2.2.0.min.js">
-      <publishTime>11/03/2016 11:24:19</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/jquery-2.2.0.min.map">
       <publishTime>04/14/2016 08:41:00</publishTime>
@@ -800,29 +1010,35 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/jquery-2.2.3.min.map">
       <publishTime>04/22/2016 13:52:13</publishTime>
     </File>
+    <File Include="Scripts/jquery-3.1.1.intellisense.js">
+      <publishTime>11/09/2016 11:03:26</publishTime>
+    </File>
     <File Include="Scripts/jquery-3.1.1.js">
-      <publishTime>11/03/2016 11:24:40</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/jquery-3.1.1.min.js">
-      <publishTime>11/03/2016 11:24:42</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/jquery-3.1.1.min.map">
-      <publishTime>11/03/2016 10:03:20</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/jquery-3.1.1.slim.js">
-      <publishTime>11/03/2016 11:24:55</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/jquery-3.1.1.slim.min.js">
-      <publishTime>11/03/2016 11:24:58</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/jquery-3.1.1.slim.min.map">
-      <publishTime>11/03/2016 10:03:19</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate-vsdoc.js">
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.js">
-      <publishTime>11/03/2016 11:25:08</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.min.js">
-      <publishTime>11/03/2016 10:03:29</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.js">
       <publishTime>04/14/2016 08:41:00</publishTime>
@@ -831,10 +1047,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/14/2016 08:41:00</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
-      <publishTime>11/03/2016 11:25:17</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.8.3.js">
-      <publishTime>11/03/2016 11:25:22</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Scripts/respond.js">
       <publishTime>04/22/2016 13:52:45</publishTime>
@@ -849,61 +1065,70 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/22/2016 13:52:45</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>11/03/2016 11:23:35</publishTime>
+      <publishTime>11/09/2016 11:03:25</publishTime>
+    </File>
+    <File Include="Startup.cs">
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/EmailSettings/Create.cshtml">
-      <publishTime>11/03/2016 10:39:13</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/EmailSettings/Delete.cshtml">
-      <publishTime>11/03/2016 11:26:27</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/EmailSettings/Details.cshtml">
-      <publishTime>11/03/2016 15:35:40</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/EmailSettings/Edit.cshtml">
-      <publishTime>11/03/2016 15:35:29</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/EmailSettings/Index.cshtml">
-      <publishTime>11/09/2016 09:38:02</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/FoodPantryLogs/Create.cshtml">
-      <publishTime>11/09/2016 10:03:42</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/FoodPantryLogs/Delete.cshtml">
-      <publishTime>11/03/2016 15:21:51</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/FoodPantryLogs/Details.cshtml">
-      <publishTime>11/03/2016 15:21:49</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/FoodPantryLogs/Edit.cshtml">
-      <publishTime>11/09/2016 10:09:20</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/FoodPantryLogs/Index.cshtml">
-      <publishTime>11/09/2016 09:38:02</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/09/2016 09:38:02</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>04/14/2016 08:41:00</publishTime>
     </File>
     <File Include="Views/Shared/Lockout.cshtml">
-      <publishTime>11/03/2016 11:26:09</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>11/09/2016 10:16:06</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>04/14/2016 08:41:00</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>11/03/2016 11:26:11</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>11/03/2016 11:25:32</publishTime>
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/09/2016 10:15:27</publishTime>
+      <publishTime>11/16/2016 08:58:19</publishTime>
+    </File>
+    <File Include="Web.Debug.config">
+      <publishTime>10/04/2016 08:50:52</publishTime>
+    </File>
+    <File Include="Web.Release.config">
+      <publishTime>11/09/2016 11:03:26</publishTime>
     </File>
   </ItemGroup>
 </Project>

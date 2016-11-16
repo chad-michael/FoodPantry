@@ -172,4 +172,3 @@ C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\Microsoft.Owin.Security.
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\Microsoft.Owin.Security.Google.xml
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Projects\_repos\FoodPantry\FoodPantry\FoodPantry\obj\Release\FoodPantry.csprojResolveAssemblyReference.cache

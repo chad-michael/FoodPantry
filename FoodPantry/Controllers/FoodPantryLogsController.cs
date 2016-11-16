@@ -28,7 +28,6 @@ namespace FoodPantry.Controllers
         }
 
         // GET: FoodPantryLogs
-        [Authorize]
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             const int pageSize = 10;
@@ -78,7 +77,6 @@ namespace FoodPantry.Controllers
             return View(foodPantryLogs.ToPagedList(pageNumber, pageSize));
         }
 
-        [Authorize]
         // GET: FoodPantryLogs/Details/5
         public ActionResult Details(int? id)
         {
@@ -98,49 +96,54 @@ namespace FoodPantry.Controllers
             */
         }
 
-        [Authorize]
         // GET: FoodPantryLogs/CreateWithStudent
         public ActionResult CreateWithStudent([Bind(Include = "StudentIDNO")] FoodPantryLog foodPantryLog)
         {
-            FoodPantryLog foodPantryLogLatest;
+            var db = new FoodPantryDataModel();
 
             FindReferrer();
-            using (var db = new FoodPantryDataModel())
+
+            var studentInfo = _studentService.FindStudentBio(foodPantryLog.StudentIDNO);
+            var foodPantryLogs = db.FoodPantryLogs
+                .Include(f => f.EnrollmentStatus)
+                .Include(f => f.InfoSource)
+                .Include(f => f.StudentType1)
+                .Include(f => f.Location)
+                .Where(s => s.StudentIDNO == foodPantryLog.StudentIDNO)
+                .OrderByDescending(s => s.DateInserted).ToList();
+
+            var foodPantryLogLatest = foodPantryLog;
+
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
+            if (foodPantryLogs != null && foodPantryLogs.Count > 0)
             {
-                var studentInfo = _studentService.FindStudentBio(foodPantryLog.StudentIDNO);
-                var foodPantryLogs = db.FoodPantryLogs
-                    .Include(f => f.EnrollmentStatus)
-                    .Include(f => f.InfoSource)
-                    .Include(f => f.StudentType1)
-                    .Include(f => f.Location)
-                    .Where(s => s.StudentIDNO == foodPantryLog.StudentIDNO)
-                    .OrderByDescending(s => s.DateInserted).ToList();
-
-                foodPantryLogLatest = foodPantryLog;
-
-                // ReSharper disable once ConditionIsAlwaysTrueOrFalse
-                if (foodPantryLogs != null && foodPantryLogs.Count > 0)
-                {
-                    foodPantryLogLatest = foodPantryLogs.First();
-                }
-
-                foodPantryLogLatest.StudentIDNO = foodPantryLog.StudentIDNO;
-                foodPantryLogLatest.StudentName = studentInfo.FirstName + " " + studentInfo.LastName;
-                foodPantryLogLatest.Qty_LargeBag = null;
-                foodPantryLogLatest.Qty_SmallBag = null;
-                foodPantryLogLatest.DateInserted = null;
-                foodPantryLogLatest.Signature = string.Empty;
-
-                ViewBag.EnrollmentStatusID = new SelectList(db.EnrollmentStatus, "EnrollmentStatusID", "Title");
-                ViewBag.InfoSourcesID = new SelectList(db.InfoSources, "InfoSourcesID", "Title");
-                ViewBag.StudentType = new SelectList(db.StudentTypes, "StudentType1", "StudentTypeDesc");
-                //ViewBag.Locations = new SelectList(_db.Locations, "LocationDesc", "LocationDesc");
+                foodPantryLogLatest = foodPantryLogs.First();
             }
+
+            foodPantryLogLatest.StudentIDNO = foodPantryLog.StudentIDNO;
+            foodPantryLogLatest.StudentName = studentInfo.FirstName + " " + studentInfo.LastName;
+            foodPantryLogLatest.Qty_LargeBag = null;
+            foodPantryLogLatest.Qty_SmallBag = null;
+            foodPantryLogLatest.DateInserted = null;
+            foodPantryLogLatest.Signature = string.Empty;
+
+            if (foodPantryLog.LocationID != null)
+            {
+                foodPantryLogLatest.LocationID = foodPantryLog.LocationID;
+                ViewBag.LocationID = new SelectList(db.Locations, "Location", "LocationDesc", foodPantryLog.LocationID);
+            }
+            else
+            {
+                ViewBag.LocationID = new SelectList(db.Locations, "Location", "LocationDesc");
+            }
+
+            ViewBag.EnrollmentStatusID = new SelectList(db.EnrollmentStatus, "EnrollmentStatusID", "Title");
+            ViewBag.InfoSourcesID = new SelectList(db.InfoSources, "InfoSourcesID", "Title");
+            ViewBag.StudentType = new SelectList(db.StudentTypes, "StudentType1", "StudentTypeDesc");
 
             return View("Create", foodPantryLogLatest);
         }
 
-        [Authorize]
         // GET: FoodPantryLogs/Create
         public ActionResult Create()
         {

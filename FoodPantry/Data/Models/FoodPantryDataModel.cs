@@ -8,7 +8,7 @@ namespace FoodPantry.Data.Models
     public partial class FoodPantryDataModel : DbContext
     {
         public FoodPantryDataModel()
-            : base("name=FoodPantryRemote")
+            : base("name=FoodPantryProd")
         {
         }
 
